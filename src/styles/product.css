@@ -1,0 +1,200 @@
+/* Product UI crops, recreated from Figma "4.0 Product Screens for Marketing" (Tm6zYmbPVyXGJNY8dxpVZC).
+   Inside .product the app's own tokens apply (SF Pro, status colors, 12px cards): these are real
+   ClickUp UI, so they keep the product palette rather than the web marketing palette. */
+
+.product {
+  --p-text: #202020;
+  --p-text-2: #646464;
+  --p-text-3: #838383;
+  --p-link: #0091FF;
+  --p-surface: #FFFFFF;
+  --p-surface-2: #FAFAFA;
+  --p-chip: #F5F5F5;
+  --p-border: #E8E8E8;
+  --p-elev-1: 0 0 1px 0 rgba(0, 0, 0, 0.27), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+  color: var(--p-text);
+  letter-spacing: -0.15px;
+  text-align: left;
+}
+.product * { box-sizing: border-box; }
+.p-label { font-size: 14px; line-height: 16px; font-weight: 600; }
+.p-body { font-size: 14px; line-height: 1.5; font-weight: 400; }
+.p-xs { font-size: 12px; line-height: 16px; letter-spacing: 0; }
+.p-link { color: var(--p-link); font-weight: 500; }
+
+/* Window shell: gray header + white sheet */
+.p-window { background: var(--p-surface-2); border-radius: 12px; box-shadow: var(--shadow-component); overflow: hidden; }
+.p-window__head { display: flex; align-items: center; justify-content: space-between; padding: 6px 16px 4px; height: 36px; }
+.p-window__title { display: flex; align-items: center; gap: 8px; }
+.p-window__ask { display: flex; align-items: center; gap: 4px; color: var(--p-text-2); }
+.p-window__ask img { width: 16px; height: 16px; }
+.p-sheet { margin: 0 8px; background: var(--p-surface); border-radius: 12px 12px 0 0; box-shadow: var(--p-elev-1); padding: 8px 4px 16px; }
+
+/* Messages */
+.p-msg { display: flex; gap: 10px; padding: 6px 16px 6px 14px; }
+.p-msg__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.p-msg ul { margin: 2px 0 0; padding-left: 20px; display: grid; gap: 6px; }
+.p-msg li { list-style: disc; }
+
+/* Avatars: people (cropped portraits) */
+.p-person { position: relative; flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 2px #FFFFFF; }
+.p-person img { position: absolute; max-width: none; }
+.p-person--sm { width: 16px; height: 16px; box-shadow: 0 0 0 1px #FFFFFF; }
+.p-person--marc { background: #FFEDB2; }
+.p-person--marc img { left: -41.91%; top: -3.31%; width: 188.81%; height: 188.81%; transform: scaleX(-1); }
+.p-person--miya { background: #F8BBC1; }
+.p-person--miya img { left: -21.23%; top: -12.01%; width: 134.64%; height: 177.94%; }
+.p-person--juan { background: #B68DFD; }
+.p-person--juan img { left: -47.87%; top: -2.81%; width: 190.47%; height: 152.38%; }
+.p-stack { display: inline-flex; }
+.p-stack > * + * { margin-left: -4px; }
+
+/* Avatars: Super Agents (3D character in a bronze bubble + AI sparkle) */
+.p-agent { position: relative; flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%; border: 1.6px solid #8F76F7; background: linear-gradient(#EADDD7, #FDF8F6); }
+.p-agent__clip { position: absolute; inset: 0; border-radius: 50%; overflow: hidden; }
+.p-agent__clip img { position: absolute; left: 0; top: 4%; width: 100%; height: auto; max-width: none; } /* whole head + shoulders, like the round agent renders */
+.p-agent__clip.is-tall img { left: 14%; top: 5%; width: 72%; } /* tall portraits: pull back so the shoulders show */
+.p-agent__spark { position: absolute; right: -5px; bottom: -5px; width: 14px; height: 14px; }
+.p-agent--sm { width: 20px; height: 20px; border-width: 1.25px; }
+.p-agent--sm .p-agent__spark { display: none; }
+.p-agent-icon { width: 16px; height: 16px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+/* Agent portraits (683x1024 photos): same framing as the round agent renders (whole head and
+   a bit of shoulders). Natural ratio (height: auto), full circle width, nudged down 4%. */
+.av-tall { position: relative; overflow: hidden; border-radius: 50%; background: linear-gradient(#EADDD7, #FDF8F6); flex: 0 0 auto; }
+.av-tall > img { position: absolute !important; inset: auto !important; left: 14% !important; top: 5% !important; width: 72% !important; height: auto !important; max-width: none; object-fit: fill; transform: none !important; }
+
+/* Task link + status pill */
+.p-task { display: inline-flex; align-items: center; gap: 6px; height: 22px; white-space: nowrap; }
+.p-task__name { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; line-height: 16px; font-weight: 500; color: #292D34; text-decoration: underline; text-decoration-color: #D6D6D6; text-underline-offset: 3px; }
+.p-task__name img { width: 16px; height: 16px; }
+.p-status { display: inline-flex; align-items: center; height: 16px; padding: 0 4px; border-radius: 4px; font-size: 11px; line-height: 16px; font-weight: 600; letter-spacing: 0.07px; text-transform: uppercase; color: #FFFFFF; }
+.p-status--progress { background: #0091FF; }
+.p-status--review { background: #F76808; }
+.p-status--update { background: #FFC53D; color: #202020; }
+.p-status--done { background: #30A46C; }
+.p-badge { display: inline-flex; align-items: center; padding: 2px 6px; border-radius: 5px; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0; color: #FFFFFF; background: #30A46C; }
+
+/* Agent profile header (Design manager) */
+.p-profile { background: var(--p-surface); border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.1); overflow: hidden; }
+.p-profile__head { padding: 24px 32px 16px; border-bottom: 1px solid var(--p-border); display: grid; gap: 16px; }
+.p-profile__who { display: flex; gap: 16px; align-items: center; }
+.p-profile__avatar { position: relative; width: 56px; height: 56px; flex: 0 0 auto; }
+.p-profile__avatar::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(in oklch from 210deg, #0091FF, #6647F0, #E93D82, #F76808, #0091FF); filter: blur(8px); opacity: .25; }
+.p-profile__avatar > img:first-child { position: absolute; left: 3px; top: 3px; width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.p-profile__avatar .p-online { position: absolute; left: 43px; top: 46px; width: 9px; height: 9px; }
+.p-profile__name { display: flex; align-items: center; gap: 6px; font-size: 18px; line-height: 24px; font-weight: 500; letter-spacing: -0.3px; }
+.p-profile__name img { height: 10px; width: auto; }
+.p-profile__desc { font-size: 16px; line-height: 20px; color: var(--p-text-2); letter-spacing: -0.32px; }
+.p-profile__actions { display: flex; gap: 8px; }
+.p-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 8px; font-size: 14px; line-height: 16px; font-weight: 500; flex: 1; }
+.p-btn--primary { background: #202020; color: #FFFFFF; }
+.p-btn--secondary { background: #F0F0F0; color: var(--p-text); }
+.p-btn--icon { flex: 0 0 32px; padding: 0; }
+.p-btn svg { width: 14px; height: 14px; }
+
+/* Knowledge & Memory */
+.p-km { padding: 18px 28px 20px 18px; }
+.p-km__head { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; font-size: 16px; line-height: 1.25; font-weight: 600; letter-spacing: -0.32px; }
+.p-km__head::before { content: ""; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 5px solid #646464; margin-right: 2px; }
+.p-km__apps { margin-left: auto; display: flex; gap: 4px; }
+.p-km__apps img { width: 16px; height: 16px; }
+.p-km__row { display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 8px 0 14px; font-size: 16px; line-height: 20px; letter-spacing: -0.32px; }
+.p-km__row > img:first-child { width: 20px; height: 20px; padding: 1px; }
+.p-km__row > span { flex: 1; }
+.p-km__row small { color: #8D8D8D; font-size: 12px; }
+.p-km__row > img:last-child { width: 24px; height: 16px; }
+
+/* Super Agent Builder: role cards */
+.p-group { padding: 8px 0 4px 18px; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0; }
+.p-roles { display: grid; grid-template-columns: repeat(4, 160px); gap: 12px; padding: 0 18px 8px; }
+.p-role { background: var(--p-surface); border-radius: 12px; box-shadow: var(--p-elev-1); padding: 8px; display: grid; gap: 4px; }
+.p-role__icon { height: 24px; display: flex; align-items: center; }
+.p-role__icon img { width: 16px; height: 16px; border-radius: 50%; object-fit: cover; }
+.p-role__icon .av-tall { width: 16px; height: 16px; }
+.p-role b { font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0; }
+.p-role span { font-size: 12px; line-height: 1.5; color: var(--p-text-3); letter-spacing: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Skill card */
+.p-skill { background: var(--p-surface); border-radius: 12px; box-shadow: var(--p-elev-1); padding: 14px; display: grid; gap: 16px; }
+.p-skill__top { display: flex; justify-content: space-between; align-items: flex-start; }
+.p-skill__gem { width: 32px; height: 32px; border-radius: 6px; background: var(--p-chip); display: grid; place-items: center; }
+.p-skill__gem img { width: 17px; height: 17px; }
+.p-skill__title { padding: 2px 0; max-width: 160px; font-size: 14px; line-height: 16px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.p-skill__meta { display: flex; gap: 12px; margin-top: 4px; font-size: 12px; line-height: 16px; color: var(--p-text-3); letter-spacing: 0; }
+.p-skill__desc { font-size: 12px; line-height: 1.5; color: var(--p-text-2); letter-spacing: 0; }
+
+/* Plain list rows (review queue) */
+/* A whole floating component (Figma Brand "dock", 1:91902): 12px radius on every corner + component shadow */
+.p-list { width: 100%; max-width: 400px; background: var(--p-surface); border-radius: 12px; box-shadow: var(--shadow-component); padding: 6px 0; overflow: hidden; }
+.p-list__head { display: flex; justify-content: space-between; padding: 8px 16px; color: var(--p-text-3); }
+.p-list__row { display: flex; align-items: center; gap: 10px; padding: 9px 16px; border-top: 1px solid #F0F0F0; }
+.p-list__row .p-task { flex: 1; min-width: 0; }
+.p-list__row .p-task__name { overflow: hidden; text-overflow: ellipsis; }
+
+/* Personal crew panel (hero) */
+.p-crew .p-sheet { padding: 6px 4px 8px; }
+.p-crew__meta { color: var(--p-text-3); font-weight: 400; font-size: 12px; letter-spacing: 0; }
+.p-crew__row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; }
+.p-crew__row + .p-crew__row { border-top: 1px solid #F0F0F0; }
+.p-crew__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.p-crew__did { font-size: 13px; line-height: 18px; color: var(--p-text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.p-agent-round { flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%; border: 1.6px solid #8F76F7; overflow: hidden; background: #FFFFFF; }
+.p-agent-round img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p-crew__you { display: flex; align-items: center; gap: 12px; margin: 8px 6px 2px; padding: 12px; border-radius: 10px; background: var(--p-surface-2); box-shadow: inset 0 0 0 1px var(--p-border); }
+.p-crew__flag { font-size: 11px; line-height: 14px; font-weight: 600; letter-spacing: 0.07px; text-transform: uppercase; color: var(--p-text-3); }
+.p-crew__cta { flex: 0 0 auto; height: 28px; padding: 0 14px; font-size: 13px; }
+
+/* Agent activity toast */
+.p-toast { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px 8px 8px; border-radius: 999px; background: var(--p-surface); box-shadow: var(--shadow-component), 0 8px 24px -12px rgba(79, 79, 79, 0.25); white-space: nowrap; font-size: 14px; line-height: 18px; letter-spacing: -0.15px; color: var(--p-text-2); }
+.p-toast__text b { color: var(--p-text); font-weight: 600; }
+.p-toast__live { width: 6px; height: 6px; border-radius: 50%; background: #30A46C; box-shadow: 0 0 0 3px rgba(48, 164, 108, 0.18); }
+.p-agent-round--sm { width: 26px; height: 26px; border-width: 1.4px; }
+.p-toast .p-agent--sm { width: 26px; height: 26px; }
+
+/* Crew reacting to the story: changed text rises in, the new ask lands with a soft ring */
+.p-crew__did, .p-run { animation: lw-rise 300ms var(--ease-out); }
+.p-run { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0; color: #6647F0; }
+.p-run.is-done { color: #838383; }
+.p-run__spin { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #EFEDFD; border-top-color: #6647F0; box-sizing: border-box; animation: p-spin 800ms linear infinite; }
+.p-run__ok { position: relative; width: 14px; height: 14px; border-radius: 50%; background: #30A46C; }
+.p-run__ok::after { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M4.2 7.1l1.9 1.9 3.7-4' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat; } /* SVG check: optically centered at any size */
+@keyframes p-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .p-run__spin { animation-duration: 2.4s; } }
+.p-crew__from { text-transform: none; letter-spacing: 0; font-weight: 500; color: #FF02F0; }
+.p-crew__you.is-new { animation: crew-ask 900ms var(--ease-out); box-shadow: inset 0 0 0 1px #B38CFF; background: #FFFFFF; }
+@keyframes crew-ask { from { box-shadow: inset 0 0 0 1px #B38CFF, 0 0 0 6px rgba(102, 71, 240, 0.18); transform: scale(0.98); } to { box-shadow: inset 0 0 0 1px #B38CFF, 0 0 0 0 rgba(102, 71, 240, 0); transform: none; } }
+
+
+/* Brain² */
+.p-brain-mark { display: block; flex: 0 0 auto; }
+.p-brain { background: var(--p-surface); border-radius: 16px; box-shadow: var(--shadow-component); padding: 14px; display: grid; gap: 12px; }
+.p-brain__head { display: flex; align-items: center; justify-content: space-between; }
+.p-brain__word { height: 22px; width: auto; }
+.p-brain__ctx { display: inline-flex; align-items: center; gap: 4px; height: 24px; padding: 0 8px 0 6px; border-radius: 999px; background: rgba(0, 0, 0, 0.04); color: var(--p-text-3); font-size: 12px; font-weight: 500; letter-spacing: 0; }
+.p-brain__ctx img { width: 14px; height: 14px; }
+.p-brain__q { justify-self: end; max-width: 85%; padding: 8px 12px; border-radius: 12px 12px 4px 12px; background: #F0F0F0; font-size: 14px; line-height: 20px; }
+.p-brain__a { display: flex; gap: 10px; align-items: flex-start; }
+.p-brain__a p { margin: 0; font-size: 14px; line-height: 1.5; }
+.p-brain__a p b { font-weight: 600; }
+.p-brain__src { display: flex; align-items: center; gap: 4px; margin-top: 6px; color: var(--p-text-3); font-size: 12px; letter-spacing: 0; }
+.p-brain__src img { width: 14px; height: 14px; }
+.p-brain__src span { margin-left: 2px; }
+/* Brain input keeps its product AI outline (orange stroke + soft ring) */
+.p-brain__input { border: 1px solid #FC6D2D; box-shadow: 0 0 0 3px rgba(252, 109, 45, 0.15); border-radius: 14px; padding: 10px 12px; display: grid; gap: 14px; }
+.p-brain__ph { color: #8D8D8D; font-size: 14px; line-height: 1.5; }
+.p-brain__bar { display: flex; align-items: center; justify-content: space-between; }
+.p-brain__search { display: inline-flex; align-items: center; gap: 3px; color: var(--p-text-3); font-size: 12px; font-weight: 500; letter-spacing: 0; }
+.p-brain__search img { width: 14px; height: 14px; }
+.p-brain__search img:first-of-type { margin-left: 3px; }
+.p-brain__search b { color: var(--p-text-2); font-weight: 500; }
+.p-brain__web { display: grid; place-items: center; width: 36px; height: 24px; border-radius: 999px; background: rgba(0, 0, 0, 0.06); }
+.p-brain__web img { width: 16px; height: 16px; }
+/* agent avatar: a crisp ClickUp-gradient ring that slowly turns, over the soft glow */
+.p-profile__avatar { --ai-angle: 210deg; animation: ai-turn 6s linear infinite; }
+.p-profile__avatar::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(in oklch from var(--ai-angle), #0091FF 0%, #FF02F0 37%, #ED5F00 52%, #B38CFF 75%, #0091FF 100%);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px)); mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px)); }
+.p-profile__avatar::before { opacity: .35; }
+.p-profile__avatar .p-online { z-index: 1; }
+@media (prefers-reduced-motion: reduce) { .p-profile__avatar { animation: none; } }

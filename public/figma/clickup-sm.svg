@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="clickup-sm">
+<g id="Vector">
+<path d="M2.83333 14.3478L5.47895 12.3214C6.88386 14.1557 8.37583 15.0009 10.0383 15.0009C11.6917 15.0009 13.1426 14.1652 14.4846 12.3456L17.1667 14.3236C15.2317 16.9472 12.8246 18.3333 10.0383 18.3333C7.26132 18.3333 4.83182 16.9569 2.83333 14.3478Z" fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint0_linear_0_671)"/>
+<path d="M10.0038 5.53997L5.31328 9.58977L3.13792 7.07289L10.0038 1.13286L16.8713 7.07753L14.6909 9.59283L10.0038 5.53997Z" fill-rule="evenodd" clip-rule="evenodd" fill="url(#paint1_linear_0_671)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_671" x1="2.83333" y1="9.77719" x2="17.1667" y2="9.77719" gradientUnits="userSpaceOnUse">
+<stop stop-color="#8930FD"/>
+<stop offset="1" stop-color="#49CCF9"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_671" x1="2.83333" y1="9.7331" x2="17.1667" y2="9.7331" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF02F0"/>
+<stop offset="1" stop-color="#FFC800"/>
+</linearGradient>
+</defs>
+</svg>
